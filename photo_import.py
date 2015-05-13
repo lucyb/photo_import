@@ -193,11 +193,11 @@ class PhotoImport(object):
 @click.command()
 @click.argument('source',      type=click.Path(exists=True, file_okay=False, dir_okay=True, readable=True))
 @click.argument('destination', type=click.Path(exists=True, file_okay=False, dir_okay=True, writable=True))
-@click.option('-k', '--keywords',    help='List of comma separated keywords (tags) to add to XMP file')
-@click.option('-r', '--credit',      help='Name of photographer, agency, etc, to add to the XMP file')
-@click.option('-d', '--description', help='Description of the image to add to the XMP file')
-@click.option('-c', '--copyright',   help='Name of copyright holder of the image to add to the XMP file')
-@click.option('-l', '--location',    help='The location of the image to add to the XMP file')
+@click.option('-k', '--keywords',    help='List of comma separated keywords (tags) to add to XMP metadata')
+@click.option('-r', '--credit',      help='Name of photographer, agency, etc, to add to the XMP metadata')
+@click.option('-d', '--description', help='Description of the image to add to the XMP metadata')
+@click.option('-c', '--copyright',   help='Name of copyright holder of the image to add to the XMP metadata')
+@click.option('-l', '--location',    help='The location of the image to add to the XMP metadata')
 def doPhotoImport(source, destination, keywords, credit, description, copyright, location):
 	metadata             = Metadata()
 	metadata.credit      = credit
