@@ -6,7 +6,7 @@ Written to bulk import photos into a date based directory structure and for addi
 
 ## How does it work?
 
-You'll need python3, imghdr, click and gexiv2. Then just run it with the source and destination directories as arguments
+You'll need python3, click and gexiv2. Then just run it with the source and destination directories as arguments
 
 Example: python photo_import.py /media/sdcard0 ~/MyPhotos
 
