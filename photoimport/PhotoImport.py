@@ -16,7 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-import click
 import imghdr
 import os.path
 import os
@@ -204,26 +203,3 @@ class PhotoImport(object):
     @staticmethod
     def absolutePath(path):
         return os.path.abspath(os.path.expanduser(os.path.expandvars(path)))
-
-
-@click.command()
-@click.argument('source',      type=click.Path(exists=True, file_okay=False, dir_okay=True, readable=True))
-@click.argument('destination', type=click.Path(exists=True, file_okay=False, dir_okay=True, writable=True))
-@click.option('-k', '--keywords',    help='List of comma separated keywords (tags) to add to XMP metadata')
-@click.option('-r', '--credit',      help='Name of photographer, agency, etc, to add to the XMP metadata')
-@click.option('-d', '--description', help='Description of the image to add to the XMP metadata')
-@click.option('-c', '--copyright',   help='Name of copyright holder of the image to add to the XMP metadata')
-@click.option('-l', '--location',    help='The location of the image to add to the XMP metadata')
-def doPhotoImport(source, destination, keywords, credit, description, copyright, location):
-    metadata = Metadata()
-    metadata.credit = credit
-    metadata.description = description
-    metadata.copyright = copyright
-    metadata.location = location
-    if keywords != None:
-        metadata.keywords = keywords.split(',')
-
-    photoImport = PhotoImport(source, destination, metadata)
-
-if __name__ == '__main__':
-    doPhotoImport()
