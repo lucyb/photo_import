@@ -17,7 +17,7 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 import click
-import photoimport.PhotoImport
+from photoimport.PhotoImport import Metadata, PhotoImport
 
 @click.command()
 @click.argument('source',      type=click.Path(exists=True, file_okay=False, dir_okay=True, readable=True))

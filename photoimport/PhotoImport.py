@@ -25,6 +25,7 @@ import shutil
 from datetime import datetime
 from gi.repository import GExiv2
 
+import click
 
 class Metadata(object):
     # For more info about photo metadata, see http://www.photometadata.org/META-101-metadata-Q-and-A
