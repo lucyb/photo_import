@@ -132,11 +132,7 @@ class Photo(object):
         if metadata.location:
             md[Metadata.TAG_XMP_LOCATION] = metadata.location
 
-        # TODO figure out what's changed and update sensibly
-        # TODO should we update things that are already set or just blank
-        # things - need bool param?
-
-        md.save_file()
+        md.save_file(fullFilePath)
 
     def prettyPrint(self):
         click.echo(self.currentLocation)
